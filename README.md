@@ -1,6 +1,8 @@
 # users
 # basic user crud application 
 
+![Wireframe](/wireframe.png)
+
 # step 1 
   - make a branch named user listing
   - just make a get request and add it to the home page
