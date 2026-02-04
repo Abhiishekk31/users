@@ -38,7 +38,32 @@ async function fetchUsers() {
   }
 }
 
+async function deleteUser(id) {
+  if (!confirm(`Are you sure you want to delete user #${id}?`)) return;
 
+  const authToken = "c734827ec1f508bd9bf3ff00c1c9c92822a2b21bc55b8976079a653a6c450e53";
+  
+  try {
+    const response = await fetch(`https://gorest.co.in/public/v2/users/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${authToken}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      alert("User deleted successfully!");
+      fetchUsers(); 
+    } else {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.message || `Failed to delete: ${response.status}`);
+    }
+  } catch (error) {
+    console.error("Delete Error:", error);
+    alert(`Error deleting user: ${error.message}`);
+  }
+}
 
 
 fetchUsers();
