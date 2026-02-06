@@ -73,7 +73,14 @@ async function editUser(id) {
 
   try {
     const response = await fetch(
-      `https://gorest.co.in/public/v2/users/${id}`
+      `https://gorest.co.in/public/v2/users/${id}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${TOKEN}`,
+          "Content-Type": "application/json",
+        },
+      }
     );
 
     if (!response.ok) throw new Error("Fetch failed");
