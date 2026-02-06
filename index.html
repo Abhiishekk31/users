@@ -1,37 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USER CRUD</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User CRUD</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>  
+<body>
 
-    <nav>
-        <ul>
-            <li><h1>USER CRUD</h1></li>
-            <li><button class="add-user-button">Add User</button></li>
-        </ul>
-    </nav>  
+  <nav>
+    <ul class="nav-list">
+      <li><h1>User CRUD</h1></li>
+      <li><button class="add-user-button">Add User</button></li>
+    </ul>
+  </nav>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Gender</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="user-table-body"></tbody>
-    </table>  
-    <div class="add-user-form-container">
-        <div class="add-user-form"></div>
-        
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody class="user-table-body"></tbody>
+  </table>
+
+  <div class="add-user-form-container edit-user-modal">
+    <div class="add-user-form">
+      <h3>Edit User</h3>
+
+      <input type="text" class="edit-name" placeholder="Name" />
+      <input type="email" class="edit-email" placeholder="Email" />
+
+      <select class="edit-gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <select class="edit-status">
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+
+      <button onclick="updateUser()">Update User</button>
+      <button class="cancel-btn" onclick="closeEditModal()">Cancel</button>
     </div>
-    <script src="app.js"></script>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
