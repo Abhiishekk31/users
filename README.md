@@ -9,3 +9,4 @@
     - use fetch api and convert to json
   - rearrange the data from the api request on the table
   - create a pull request and merge it to main repo. PR will be accepted by abhinav or atharva.
+

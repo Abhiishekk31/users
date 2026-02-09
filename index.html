@@ -11,9 +11,32 @@
   <nav>
     <ul class="nav-list">
       <li><h1>Users CRUD</h1></li>
-      <li><button class="add-user-button">Add User</button></li>
+      <li><button class="add-user-button" onclick="openAddModal()">Add User</button></li>
     </ul>
   </nav>
+
+  <div class="add-user-modal" style="display: none;">
+  <div class="modal-content">
+    <h2>Add New User</h2>
+    <input type="text" class="add-name" placeholder="Full Name">
+    <input type="email" class="add-email" placeholder="Email Address">
+    
+    <select class="add-gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+
+    <select class="add-status">
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
+    </select>
+
+    <div class="modal-actions">
+      <button onclick="addUser()">Save User</button>
+      <button onclick="closeAddModal()">Cancel</button>
+    </div>
+  </div>
+</div>
 
   <table>
     <thead>
