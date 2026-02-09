@@ -5,6 +5,19 @@
   font-family: Arial, sans-serif;
 }
 
+.loading-box {
+  background-color: #eee;
+  height: 14px;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.loading-btn {
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin-right: 5px;
+}
 nav {
   background-color: #f2f2f2;
   padding: 1rem;

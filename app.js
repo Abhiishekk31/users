@@ -28,6 +28,22 @@ function validateUser(payload) {
 
 
 async function fetchUsers() {
+  let loader = "";
+  for (let i = 0; i < 5; i++) {
+    loader += `
+      <tr>
+        <td><div class="loading-box" style="width: 1.5rem;"></div></td>
+        <td><div class="loading-box"></div></td>
+        <td><div class="loading-box" style="width: 80%;"></div></td>
+        <td><div class="loading-box" style="width: 3.5rem;"></div></td>
+        <td><div class="loading-box" style="width: 3.5rem;"></div></td>
+        <td>
+          <div class="loading-box loading-btn"></div>
+          <div class="loading-box loading-btn"></div>
+        </td>
+      </tr>`;
+  }
+  tableBody.innerHTML = loader;
   try {
     const response = await fetch("https://gorest.co.in/public/v2/users", {
       headers: {
